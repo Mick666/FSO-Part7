@@ -4,9 +4,10 @@ const CreateNew = ({ addNew, createNotification }) => {
     const info = useField()
     const history = useHistory()
 
-    const contentProps = { value: content.value, onChange: content.onChange }
-    const authorProps = { value: author.value, onChange: author.onChange }
-    const infoProps = { value: info.value, onChange: info.onChange }
+    const removeResetProp = (obj) => {
+        const { reset, ...otherProps } = obj
+        return otherProps
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -27,15 +28,15 @@ const CreateNew = ({ addNew, createNotification }) => {
             <form onSubmit={handleSubmit}>
                 <div>
                     content
-                    <input name='content' {...contentProps} />
+                    <input name='content' {...removeResetProp(content)} />
                 </div>
                 <div>
                     author
-                    <input name='author' {...authorProps} />
+                    <input name='author' {...removeResetProp(author)} />
                 </div>
                 <div>
                     url for more info
-                    <input name='info' {...infoProps} />
+                    <input name='info' {...removeResetProp(info)} />
                 </div>
                 <button>create</button>
                 <button
