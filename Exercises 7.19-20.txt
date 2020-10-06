@@ -1,3 +1,6 @@
 Heroku hosted app: https://evening-beyond-08847.herokuapp.com/
 
+Username: root
+Password: password
+
 Github repo of frontend code: https://github.com/Mick666/FSO-Part7-BlogFrontEnd
